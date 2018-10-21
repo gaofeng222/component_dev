@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //工厂方式 : 封装函数
+    //new 去调用一个函数，这个时候的this指向new创建出来的对象
+    //函数的返回直接就是这个this,隐士返回
+    //new 后面的函数就是构造函数
+    function CreatePerson(name){
+        //原料
+        // var obj = new Object();
+        //加工
+        this.name = name;
+        this.showName = function(){
+            alert (this.name)
+        }
+        //出场
+        //return obj;
+    }
+    var p1 = new CreatePerson("小明");
+    //p1.showName()
+    var p2 =new CreatePerson("小强");
+    //p2.showName()
+    alert(p1.showName == p2.showName)
+</script>
+</body>
+</html>

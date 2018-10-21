@@ -10,21 +10,18 @@
 </head>
 <body>
 <script>
-    var obj = new Object();
-    obj.name = "小明";
-    obj.showName = function(){//this
-        alert(obj.name)
+    //原型对象加构造函数的写法
+    function 构造函数(){
+        this.属性
     }
-//    alert(obj.name)
-    obj.showName()
-
-    var obj2 = new Object();
-    obj2.name = "小强";
-    obj2.showName = function(){
-
-        alert(this.name)
+    
+    
+    构造函数.prototype.方法 = function () {
+        
     }
-    obj2.showName()
+
+    var 对象1 = new 构造函数;
+    对象1.方法()
 </script>
 </body>
 </html>

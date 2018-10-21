@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>面向对象中的选项卡1</title>
+    <style>
+        #div1 div{
+            width : 200px;
+            height:200px;
+            border:1px solid #000;
+            display: none;
+        }
+        .active{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <input type="button" value="1" class="active">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <div style="display: block;">001</div>
+    <div>002</div>
+    <div>003</div>
+</div>
+<script>
+    //面向对象中的选项卡
+    var oParent,aInput,aDiv
+    window.onload = function(){
+        oParent = document.getElementById("div1");
+        aInput = oParent.getElementsByTagName('input');
+        aDiv = oParent.getElementsByTagName("div")
+        init();
+    }
+    //先变形1、函数不要嵌套函数
+
+    function  init(){  //函数初始化方法
+        for(var i=0;i<aInput.length;i++){
+            aInput[i].index = i;
+            aInput[i].onclick = change
+        }
+    }
+
+    function change(){
+            for(var i=0;i<aInput.length;i++){
+                aInput[i].className = ""
+                aDiv[i].style.display = "none"
+            }
+            console.log(this.index)
+            this.className = 'active'
+            aDiv[this.index].style.display = "block"
+    }
+</script>
+</body>
+</html>

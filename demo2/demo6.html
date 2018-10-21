@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //原型 : 改写对象下面的公用方法或属性,相同的方法只保存一份
+    //极大的提高性能
+    //原型:css的class
+    //普通方法:css中的style
+    //prototype卸载构造函数的下面;
+    var arr = [1,2,3,4,5];
+    var arr2 = [1,2,3,4,5,6];
+    arr.sum = function(){
+        var result = 0;
+        for(var i=0;i<this.length;i++){
+            result += this[i]
+        }
+        return result;
+    }
+    //alert(arr.sum())
+    arr2.sum = function(){
+        var result = 0;
+        for(var i=0;i<this.length;i++){
+            result += this[i]
+        }
+        return result;
+    }
+    alert(arr2.sum())
+</script>
+</body>
+</html>

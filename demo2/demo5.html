@@ -10,21 +10,11 @@
 </head>
 <body>
 <script>
-    var obj = new Object();
-    obj.name = "小明";
-    obj.showName = function(){//this
-        alert(obj.name)
-    }
-//    alert(obj.name)
-    obj.showName()
-
-    var obj2 = new Object();
-    obj2.name = "小强";
-    obj2.showName = function(){
-
-        alert(this.name)
-    }
-    obj2.showName()
+    var a = [1,2,3,4];
+    var b = [1,2,3,4]
+    alert(a==b) //false
+    //基本类型的复制，是开辟了新的内存空间,互不影响
+    //引用类型的赋值,没有开辟新的内存空间，是引用的复制，会互相影响
 </script>
 </body>
 </html>
