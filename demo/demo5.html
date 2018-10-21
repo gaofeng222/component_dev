@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //嵌套for循环跳出
+  a : for(var i=0;i<5;i++){
+        for(var j=0;j<1;j++){
+            if(i==3){
+                break a;
+            }
+            alert(i)
+        }
+    }
+</script>
+</body>
+</html>
